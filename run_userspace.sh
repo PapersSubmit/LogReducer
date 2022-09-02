@@ -23,9 +23,9 @@ echo python3 python/hello.py --lognumber=$element > ./log/benchmark.log
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReader.py  --program hello.py  --template  "not" --logfile '/data/home/logbench/python/python.log' --language $file --lognumber $lognumber > ./log/reducer.log 2>&1 &
+nohup python3 logReducer.py  --program hello.py  --template  "not" --logfile '/data/home/logbench/python/python.log' --language $file --lognumber $lognumber > ./log/reducer.log 2>&1 &
 sleep 5s
-echo  python3 /data/home/logreducer/ebpf/logReader.py  --program hello.py  --template  "not" --logfile '/data/home/logbench/python/python.log' --language $file --lognumber $lognumber
+echo  python3 logReducer.py  --program hello.py  --template  "not" --logfile '/data/home/logbench/python/python.log' --language $file --lognumber $lognumber
 echo "start log reducer"
 
 sleep $sleep_time
@@ -43,7 +43,7 @@ java -jar ./java/helloLog/target/helloLog-jar-with-dependencies.jar -l $element 
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReader.py  --program helloLog  --template  "not" --logfile '/data/home/logbench/java/java.log' --language $file --lognumber $lognumber  > ./log/reducer.log 2>&1 &
+nohup python3 logReducer.py  --program helloLog  --template  "not" --logfile '/data/home/logbench/java/java.log' --language $file --lognumber $lognumber  > ./log/reducer.log 2>&1 &
 sleep 5s
 echo "start log reducer"
 
@@ -61,7 +61,7 @@ file="go"
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReader.py  --program hello  --template  "not" --logfile '/data/home/logbench/golang/golang.log' --language $file --lognumber $lognumber  > ./log/reducer.log 2>&1 & 
+nohup python3 logReducer.py  --program hello  --template  "not" --logfile '/data/home/logbench/golang/golang.log' --language $file --lognumber $lognumber  > ./log/reducer.log 2>&1 & 
 sleep 5s
 echo "start log reducer"
 
@@ -78,7 +78,7 @@ file="c++"
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReader.py  --program hello  --template  "not" --logfile '/data/home/logbench/c++/c++.log' --language $file --lognumber $lognumber  > ./log/reducer.log 2>&1 &
+nohup python3 logReducer.py  --program hello  --template  "not" --logfile '/data/home/logbench/c++/c++.log' --language $file --lognumber $lognumber  > ./log/reducer.log 2>&1 &
 sleep 5s
 echo "start log reducer"
 

@@ -41,7 +41,7 @@ echo java -jar ./java/helloLog/target/helloLog-jar-with-dependencies.jar -l $log
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReducer.py  --program helloLog --template '2022-08-16 19:47:26,505 ERROR com.yuxiaoba.hello.Hello [Hello.java:104]' --language python > ./log/reduer.log 2>&1 &
+nohup python3 logReducer.py  --program helloLog --template '2022-08-16 19:47:26,505 ERROR com.yuxiaoba.hello.Hello [Hello.java:104]' --language python > ./log/reduer.log 2>&1 &
 sleep 5s
 echo "start log reducer"
 
@@ -60,7 +60,7 @@ echo ./golang/hello  --lognumber=1000   --length=$loglength
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReducer.py  --program hello --template '"level":"error","ts":"2022-08-16 19:49:04.210","caller":"golang/hello.go:99"' --language golang > ./log/reduer.log 2>&1 & 
+nohup python3 logReducer.py  --program hello --template '"level":"error","ts":"2022-08-16 19:49:04.210","caller":"golang/hello.go:99"' --language golang > ./log/reduer.log 2>&1 & 
 sleep 5s
 echo "start log reducer"
 
@@ -78,7 +78,7 @@ echo ./c++/hello -lognumber 1000  -length $loglength
 sleep 5s
 echo "start benchmark"
 
-nohup python3 /data/home/logreducer/ebpf/logReducer.py  --program hello --template '2022/08/24 08:29:03,534.244 ERROR - [hello.cpp:60]' --language python > ./log/reduer.log 2>&1 &
+nohup python3 logReducer.py --program hello --template '2022/08/24 08:29:03,534.244 ERROR - [hello.cpp:60]' --language python > ./log/reduer.log 2>&1 &
 sleep 5s
 echo "start log reducer"
 
