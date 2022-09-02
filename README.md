@@ -1,6 +1,6 @@
 # LogReducer
 
-eBPF-based Log Filter and log benmark of paper `LogReducer: Identify and Reduce Log Hotspots inKernel on the Fly` submit to ICSE 2023
+eBPF-based Log Filter and log benmark of paper `LogReducer: Identify and Reduce Log Hotspots in Kernel on the Fly` submit to ICSE 2023
 
 ## Require 
 ```
